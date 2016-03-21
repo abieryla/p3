@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    #return view('welcome');
+    return 'P3 work in progress page';
 });
 
 /*
@@ -28,4 +29,10 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web']], function () {
     //
+
+
+	Route::get('/lorem', 'LoremController@getIndex');
+        Route::get('/user', 'UserController@getCreateUser');
+        Route::post('/user', 'UserController@postUser');
+
 });
