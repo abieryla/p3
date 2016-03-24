@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    #return view('welcome');
-    return 'P3 work in progress page';
+    return view('welcome');
+    #return 'P3 work in progress page';
 });
 
 /*
@@ -31,8 +31,9 @@ Route::group(['middleware' => ['web']], function () {
     //
 
 
-	Route::get('/lorem', 'LoremController@getIndex');
-        Route::get('/user', 'UserController@getCreateUser');
-        Route::post('/user', 'UserController@postUser');
+	Route::get('/lorem', 'LoremController@getLoremInfo');
+	Route::post('/lorem/create', 'LoremController@postCreate');
+        Route::get('/user', 'UserController@getUserInfo');
+        Route::post('/user/create', 'UserController@postCreate');
 
 });

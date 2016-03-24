@@ -3,15 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
 
 class UserController extends Controller {
 
     /**
     * Responds to requests to GET /user
     */
-    public function getCreateUser() {
-        return 'Page to get user info';
-	#return view('user.createUser');
+    public function getUserInfo() {
+        #return 'Page to get user info';
+	$faker = create();
+	echo $faker->name;
+	return view('user.userinfo') ;
+		#with->('faker', $faker);
+	
     }
 
 
