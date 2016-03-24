@@ -24,14 +24,16 @@ class UserController extends Controller {
 		'users' => 'required|max:50|min:1|numeric',
 	]);
 	
-#	foreach($users as $user)
+	#@foreach($users as $user)
 	
 	$faker = \Faker\Factory::create();
 #	echo $faker->name;
-	$fakername = $faker->name;
+	#$fakername = $faker->name;
 
 	return view('user.createuser')
-		->with('fakername', $fakername);
+		->with('users', $request->input('users'))
+#		->with('fakername', $fakername);
+		->with('faker', $faker);
     }
 
 }

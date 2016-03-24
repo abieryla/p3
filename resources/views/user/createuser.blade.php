@@ -7,7 +7,7 @@
 @section('content')
 	<p><a href='/'>Home</a></p>
 	<h1>Random User Generator</h1>
-
-	{{ $fakername }}
+	
+	{{ $faker->name }}
 @stop
 

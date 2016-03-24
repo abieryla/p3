@@ -22,6 +22,7 @@ class LoremController extends Controller {
 	$this->validate($request,[
 		'paragraph' => 'required|max:10|min:1|numeric',
 	]);
+
 	return view('lorem.create')
 		->with('paragraph', $request->input('paragraph'));
    }
