@@ -9,5 +9,5 @@
 	<p><a href='/'>Home</a></p>
         <h1>Lorem Ipsum Generator</h1>
 
-	{{ lorem($paragraph) }}
+	{!! lorem($paragraph) !!}
 @stop

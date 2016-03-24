@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-#require_once '/Faker/Factory/autoload.php';
-use faker;
 
 
 class UserController extends Controller {
@@ -15,8 +13,6 @@ class UserController extends Controller {
     */
     public function getUserInfo() {
 	$users = null;
-	#$faker = create();
-	#echo $faker->name;
 	return view('user.userinfo') 
 		->with('users', $users);
 	
@@ -27,9 +23,15 @@ class UserController extends Controller {
 	$this->validate($request,[
 		'users' => 'required|max:50|min:1|numeric',
 	]);
+	
+#	foreach($users as $user)
+	
+	$faker = \Faker\Factory::create();
+#	echo $faker->name;
+	$fakername = $faker->name;
 
-	return view('user.create')
-		->with('users', $request->input('users'));
+	return view('user.createuser')
+		->with('fakername', $fakername);
     }
 
 }

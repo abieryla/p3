@@ -1,12 +1,13 @@
 @extends('layouts.master')
 
-@section('head')
-        <meta charset='utf-8'>
-        <link href='css/user/p3.css' rel='sytlesheet'>
+@section('title')
+	Random User Generator
 @stop
 
 @section('content')
+	<p><a href='/'>Home</a></p>
+	<h1>Random User Generator</h1>
+
+	{{ $fakername }}
 @stop
 
-@section('body')
-@stop

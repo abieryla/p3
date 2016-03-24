@@ -12,7 +12,6 @@ class LoremController extends Controller {
     * Responds to requests to GET /user
     */
     public function getLoremInfo() {
-#        return 'Page to get Lorem info';
 	$paragraph = null;
 	return view('lorem.loreminfo')
 		->with('paragraph', $paragraph);
@@ -29,3 +28,4 @@ class LoremController extends Controller {
 
 
 }
+
