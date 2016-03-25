@@ -23,17 +23,21 @@ class UserController extends Controller {
 	$this->validate($request,[
 		'users' => 'required|max:50|min:1|numeric',
 	]);
-	
+
+
+	$fakernames = [];	
 	#@foreach($users as $user)
-	
-	$faker = \Faker\Factory::create();
-#	echo $faker->name;
-	#$fakername = $faker->name;
+	$numusers = $request->input('users');
+	for($i = 0; $i < $numusers; $i++) {	
+		$faker = \Faker\Factory::create();
+		$fakernames[$i] = $faker->name;
+	}
 
 	return view('user.createuser')
 		->with('users', $request->input('users'))
 #		->with('fakername', $fakername);
-		->with('faker', $faker);
+#		->with('faker', $faker);
+		->with('fakernames', $fakernames);
     }
 
 }

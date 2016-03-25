@@ -7,7 +7,9 @@
 @section('content')
 	<p><a href='/'>Home</a></p>
 	<h1>Random User Generator</h1>
-	
-	{{ $faker->name }}
+
+	@for ($i = 0; $i < $users; $i++)
+		{{ $fakernames[$i] }}<br>
+	@endfor
 @stop
 
