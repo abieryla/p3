@@ -13,7 +13,6 @@
 
 Route::get('/', function () {
     return view('welcome');
-    #return 'P3 work in progress page';
 });
 
 /*
