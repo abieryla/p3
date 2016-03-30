@@ -13,8 +13,18 @@ class UserController extends Controller {
     */
     public function getUserInfo() {
 	$users = null;
+	$email = null;
+	$address = null;
+	if (isset($_GET["email"])) {
+		$email=1;
+	}
+	elseif (isset($_GET["address"])) {
+		$address=1;
+	}
 	return view('user.userinfo') 
-		->with('users', $users);
+		->with('users', $users)
+		->with('email', $email)
+		->with('address', $address);
 	
     }
 
@@ -24,20 +34,33 @@ class UserController extends Controller {
 		'users' => 'required|max:50|min:1|numeric',
 	]);
 
-
+	/** arrays to store names, emails and addresses **/
 	$fakernames = [];	
-	#@foreach($users as $user)
+	$fakeraddress = [];	
+	$fakeremails = [];	
+	
+	/** Get user input requests **/
 	$numusers = $request->input('users');
+	$email= $request->input('email');
+	$address = $request->input('address');
+
+	/** Store fake info in arrays	**/
 	for($i = 0; $i < $numusers; $i++) {	
 		$faker = \Faker\Factory::create();
 		$fakernames[$i] = $faker->name;
+		$fakeraddress[$i] = $faker->address;
+		$fakeremails[$i] = $faker->email;
 	}
 
+	/** returns fake user view **/
 	return view('user.createuser')
 		->with('users', $request->input('users'))
-#		->with('fakername', $fakername);
-#		->with('faker', $faker);
-		->with('fakernames', $fakernames);
+		->with('fakernames', $fakernames)
+		->with('fakeraddress',$fakeraddress)
+		->with('fakeremails',$fakeremails)
+		->with('address', $address)
+		->with('email', $email);
+
     }
 
 }

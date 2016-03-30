@@ -14,7 +14,9 @@
  	    <div class="errors">
              {{$errors->first('users') }} <br>	    
  	    </div>
-              Enter number of fake users to be created (max 50): <input type='text' name='users' size='5' maxlength='2' value='{{ old('users') }}'>
+              Enter number of fake users to be created (max 50): <input type='text' name='users' size='5' maxlength='2' value='{{ old('users') }}'><br>
+   	     Address? <input type="checkbox" name="address"> <br>
+   	     Email? <input type="checkbox" name="email"> <br> 
              <input type='submit' value='Enter' ><br>
  	
  	@if(count($errors) > 0)

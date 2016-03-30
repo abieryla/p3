@@ -10,6 +10,13 @@
 
 	@for ($i = 0; $i < $users; $i++)
 		{{ $fakernames[$i] }}<br>
+		@if ($address == 'on')
+			{{ $fakeraddress[$i] }}<br>
+		@endif
+		@if ($email == 'on')
+			{{ $fakeremails[$i] }}<br>
+		@endif
+		<br>
 	@endfor
 @stop
 

@@ -8,6 +8,7 @@
 @section('content')
 	<p><a href='/'>Home</a></p>
         <h1>Lorem Ipsum Generator</h1>
+
 	<form method='POST' action='/lorem/create'>
             {{ csrf_field() }}
 	    <div class="errors">
