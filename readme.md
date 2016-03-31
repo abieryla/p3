@@ -1,27 +1,32 @@
-# Laravel PHP Framework
+Allyson Bieryla 
+================
+dwa15 Spring 2016 
+---------------
+### P3: Lorem Ipsum and Random User Generator
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+#### Project Description
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+The purpose of project 3 (P3) is to create a Lorem Ipsum text generator and a Random User generator.
+From the home page the user can select to generate Lorem Ipsum text or Random User information. Each
+link will take them to a new page where they can enter the number of paragraphs (for Lorem Ipsum) or
+the number of users (for Random User) they would like. There is some client-side validation using an
+input box size limiting the character input to 2 since I have the Max number to be generated set at 
+50. There is also server side validation checking to make sure that the characters are numbers between
+1-50 and that no other characters were input. If a user enters an incorrect value a red error message 
+will appear and the user can try again. In the Random User generator Fake names will automatically be 
+generator but there is an optional check box for generating an email and/or an address for that Fake 
+user. For this assignment I used packagist.org to download and install fzaninotto/faker to generate 
+the fake users and ecrmnn/lorem for the Lorem Ipsum text. At the last moment I decided to try and use
+Bootstrap for making my site look a little nicer. 
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+#### Live URL link
 
-## Official Documentation
+http://p3.abieryla.me
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+#### Github.com URL
 
-## Contributing
+https://github.com/abieryla/p3
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+#### URL to Demo
+http://screencast.com/t/wDDrUADeg4er
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
